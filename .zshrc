@@ -93,5 +93,5 @@ source $ZSH/oh-my-zsh.sh
 alias vi="vim"
 alias grep="grep --color=auto"
 
-
-. /home/lisabug/torch/install/bin/torch-activate
+# swap ctrl and capslock
+setxkbmap -option ctrl:swapcaps
