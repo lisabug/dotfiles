@@ -2,10 +2,10 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=/usr/local/cuda/bin:$PATH
 export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/Source
-export PYTHONPATH=/home/lisabug/dispflownet-release/python:$PYTHONPATH
-source /usr/local/bin/virtualenvwrapper.sh
+# export WORKON_HOME=$HOME/.virtualenvs
+# export PROJECT_HOME=$HOME/Source
+# export PYTHONPATH=/home/lisabug/dispflownet-release/python:$PYTHONPATH
+# source /usr/local/bin/virtualenvwrapper.sh
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -94,4 +94,4 @@ alias vi="vim"
 alias grep="grep --color=auto"
 
 # swap ctrl and capslock
-setxkbmap -option ctrl:swapcaps
+# setxkbmap -option ctrl:swapcaps
