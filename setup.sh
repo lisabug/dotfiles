@@ -12,6 +12,7 @@ echo 'set up zsh'
 cd ~
 if [ ! -d ".oh-my-zsh" ]; then
     echo 'download oh-my-zsh...'
+    apt-get install zsh
     apt-get install wget
     sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 fi
