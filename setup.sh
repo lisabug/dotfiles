@@ -29,6 +29,7 @@ vim +PluginInstall +qall
 
 cd ~/.vim/bundle/YouCompleteMe
 apt-get install cmake
+apt-get install ctags
 ./install.py --clang-completer
 
 # SET UP TMUX
