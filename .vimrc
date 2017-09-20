@@ -30,6 +30,8 @@ Plugin 'szw/vim-ctrlspace'
 Plugin 'majutsushi/tagbar'
 " Python Syntax Highlight
 Plugin 'hdima/python-syntax'
+" CMake Syntax
+Plugin 'pboettch/vim-cmake-syntax'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
