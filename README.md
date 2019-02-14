@@ -8,3 +8,7 @@ Personal configuration of tools:
 ## Installation
 1. `git clone https://github.com/lisabug/dotfiles.git ~/dotfiles`
 2. `sh dotfiles/setup.sh`
+
+
+## Install antigen
+curl -L git.io/antigen > antigen.zsh
