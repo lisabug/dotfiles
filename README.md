@@ -11,4 +11,4 @@ Personal configuration of tools:
 
 
 ## Install antigen
-curl -L git.io/antigen > antigen.zsh
+`curl -L git.io/antigen > antigen.zsh`
