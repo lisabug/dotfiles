@@ -58,7 +58,19 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(
+    git
+    gcloud
+    zsh-autosuggestions
+    copypath
+    aliases
+    docker
+    docker-compose
+    copyfile
+    sudo
+    zsh-syntax-highlighting
+    you-should-use
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -92,6 +104,29 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vi="vim"
 alias grep="grep --color=auto"
+alias vpnstart="openvpn3 session-start -c robotruck"
+alias vpnstop="openvpn3 session-manage -c robotruck -D"
+alias sync_rt="onedrive --synchronize --single-directory \"Documents/RoboTruck\""
 
 # swap ctrl and capslock
 # setxkbmap -option ctrl:swapcaps
+
+is_first=true
+function gcp_project_id() {
+  if [ -f "$HOME/.config/gcloud/active_config" ]; then
+      gcp_profile=$(cat $HOME/.config/gcloud/active_config)
+      project_id=$(awk '/project/{print $3}' $HOME/.config/gcloud/configurations/config_$gcp_profile)
+      account_email=$(awk '/account/{print $3}' $HOME/.config/gcloud/configurations/config_$gcp_profile)
+
+      if "${is_first}"; then
+            is_first=false
+              RPROMPT=${RPROMPT}%F{039}'${project_id}|${account_email}'%f
+              fi
+            fi
+        }
+        autoload -Uz add-zsh-hook
+        add-zsh-hook precmd gcp_project_id
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/bin/terraform terraform
+autoload -U compinit; compinit
